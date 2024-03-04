@@ -6,6 +6,11 @@ void Game::initVariables()
 	this->window = nullptr;
 }
 
+void Game::initPlayer()
+{
+	this->player = new Player();
+}
+
 void Game::initWindow()
 {
 	// window size
@@ -16,6 +21,8 @@ void Game::initWindow()
 	// this->videoMode.getDesktopMode;
 
 	this->window = new sf::RenderWindow(this->videoMode, "Pokemock", sf::Style::Titlebar | sf::Style::Close);
+	this->window->setFramerateLimit(144);
+	this->window->setVerticalSyncEnabled(false);
 }
 
 // Constructors and Destructors
@@ -23,11 +30,13 @@ Game::Game()
 {
 	this->initVariables();
 	this->initWindow();
+	this->initPlayer();
 }
 
 Game::~Game()
 {
 	delete this->window;
+	delete this->player;
 }
 
 // Accessors
@@ -37,25 +46,20 @@ const bool Game::running() const
 	return this->window->isOpen();
 }
 
-void Game::pollEvents()
-{
-	while (this->window->pollEvent(this->ev)) {
-		switch (this->ev.type) {
-		case sf::Event::Closed:
-			this->window->close();
-			break;
-		case sf::Event::KeyPressed:
-			if (ev.key.code == sf::Keyboard::Escape)
-				this->window->close();
-			break;
-		}
-	}
-}
-
 // Functions
 void Game::update()
 {
-	this->pollEvents();
+	sf::Event e;
+	while (this->window->pollEvent(e)) {
+		if (e.type == sf::Event::Closed) {
+			this->window->close();
+		}
+		if (e.KeyPressed && e.key.code == sf::Keyboard::Escape) {
+			this->window->close();
+		}
+	}
+
+	// move player
 }
 
 void Game::render()
@@ -68,9 +72,10 @@ void Game::render()
 		- display frame in window
 	*/
 
-	this->window->clear(sf::Color(255, 0, 0, 255));
+	this->window->clear(); // clear to black window
 	
 	// Draw game objects
+	this->player->render(*this->window);
 	
 	this->window->display();
 }

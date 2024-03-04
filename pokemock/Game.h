@@ -1,9 +1,6 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
+#include "Player.h"
 
 #ifndef GAME_H
 #define GAME_H
@@ -19,11 +16,13 @@ private:
 
 	// Window
 	sf::RenderWindow* window;
+	Player* player;
 	sf::VideoMode videoMode;
 	sf::Event ev;
 
 	// Private Functions
 	void initVariables();
+	void initPlayer();
 	void initWindow();
 
 public:
@@ -36,7 +35,6 @@ public:
 	const bool running() const;
 
 	// Functions
-	void pollEvents();
 	void update();
 	void render();
 };
