@@ -7,14 +7,7 @@ Through this project, I learned alot about Object Oriented Programming, and how 
 Thanks for taking the time to check out this project!
 
 ## Best Resources
-<div display="flex" flex-direction="row">
-  <a href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php">
-    Getting Started
-  </a>
-  <a href="https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22">
-    Setting up the Player Class
-  </a>
-  <a href="https://pages.github.com/](https://en.sfml-dev.org/forums/index.php?topic=20008.0)https://en.sfml-dev.org/forums/index.php?topic=20008.0">
-    Debugging a Compiler Issue
-  </a>
-</div>
+- [Getting Started](https://www.sfml-dev.org/tutorials/2.6/start-vc.php)
+- [Setting up the Player Class](https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22)
+- [Debugging a Compiler Issue](https://en.sfml-dev.org/forums/index.php?topic=20008.0)
+
