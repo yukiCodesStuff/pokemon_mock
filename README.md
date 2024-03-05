@@ -7,6 +7,14 @@ Through this project, I learned alot about Object Oriented Programming, and how 
 Thanks for taking the time to check out this project!
 
 ## Best Resources
-[Getting Set Up](https://www.sfml-dev.org/tutorials/2.6/start-vc.php) (I used Visual Studio)
-[Setting Up Player Class](https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22)
-[Compiler Issue]([https://pages.github.com/](https://en.sfml-dev.org/forums/index.php?topic=20008.0)https://en.sfml-dev.org/forums/index.php?topic=20008.0)
+<div>
+  <a href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php">
+    Getting Started
+  </a>
+  <a href="https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22">
+    Setting up the Player Class
+  </a>
+  <a href="https://pages.github.com/](https://en.sfml-dev.org/forums/index.php?topic=20008.0)https://en.sfml-dev.org/forums/index.php?topic=20008.0">
+    Debugging a Compiler Issue
+  </a>
+</div>
