@@ -7,7 +7,7 @@ Through this project, I learned alot about Object Oriented Programming, and how 
 Thanks for taking the time to check out this project!
 
 ## Best Resources
-<div>
+<div display="flex" flex-direction="row">
   <a href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php">
     Getting Started
   </a>
