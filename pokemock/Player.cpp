@@ -27,6 +27,7 @@ Player::Player()
 	this->movementSpeed = 1.f;
 	this->direction = DOWN;
 	this->isMoving = false;
+	this->currentFrame = 0;
 
 	this->initTexture();
 	this->initSprite();
@@ -47,18 +48,18 @@ void Player::update()
 	if (this->isMoving) {
 		this->updateAnimation();
 	}
-
-	this->isMoving = false;
-	this->sprite.setTextureRect(animationMap[this->direction][0]);
+	else {
+		this->isMoving = false;
+		this->sprite.setTextureRect(animationMap[this->direction][0]);
+	}
 }
 
 void Player::updateAnimation()
 {
 	// Check if the animation timer exceeds the frame time
 	if (this->animationTimer.getElapsedTime().asSeconds() >= 0.2f) {
-		size_t currentFrame = 0; // Move to the next frame
-		currentFrame++;
-		currentFrame = currentFrame % 4;
+		this->currentFrame++;
+		this->currentFrame = currentFrame % 4;
 
 		this->sprite.setTextureRect(
 			animationMap[this->direction][currentFrame]

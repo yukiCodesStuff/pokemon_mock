@@ -23,6 +23,7 @@ private:
 
 	float movementSpeed;
 	bool isMoving;
+	size_t currentFrame;
 	Direction direction;
 
 	// Private Functions
