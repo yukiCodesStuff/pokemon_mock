@@ -60,6 +60,18 @@ void Game::update()
 	}
 
 	// move player
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		this->player->move(-1.0f, 0.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		this->player->move(1.0f, 0.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		this->player->move(0.f, -1.f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		this->player->move(0.f, 1.f);
+	}
 }
 
 void Game::render()
@@ -72,7 +84,7 @@ void Game::render()
 		- display frame in window
 	*/
 
-	this->window->clear(); // clear to black window
+	this->window->clear(sf::Color::Red); // clear to black window
 	
 	// Draw game objects
 	this->player->render(*this->window);
