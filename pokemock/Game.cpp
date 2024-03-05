@@ -59,18 +59,29 @@ void Game::update()
 		}
 	}
 
-	// move player
+	// move player; only allow player to move in one direction at a time
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		this->player->setDirection(LEFT);
 		this->player->move(-1.0f, 0.f);
+		this->player->setMoving(true);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		this->player->setDirection(RIGHT);
 		this->player->move(1.0f, 0.f);
+		this->player->setMoving(true);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		this->player->setDirection(UP);
 		this->player->move(0.f, -1.f);
+		this->player->setMoving(true);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		this->player->setDirection(DOWN);
 		this->player->move(0.f, 1.f);
+		this->player->setMoving(true);
+	}
+	else {
+		this->player->setMoving(false);
 	}
 }
 
