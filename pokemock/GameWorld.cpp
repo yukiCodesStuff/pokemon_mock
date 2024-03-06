@@ -18,7 +18,7 @@ void GameWorld::initEnemyPositions()
 
 void GameWorld::initWorldTexture()
 {
-	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 41504))) {
+	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 3828))) {
 		std::cout << "ERROR::GAMEWORLD::INITWORLDTEXTURE::Could not load texture file." << std::endl;
 		return;
 	}
