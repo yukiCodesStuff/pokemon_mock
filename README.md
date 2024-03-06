@@ -16,4 +16,5 @@ This map is not a set texture, but a collection of tileset sprites. Each of thes
 - [Getting Started](https://www.sfml-dev.org/tutorials/2.6/start-vc.php)
 - [Setting up the Player Class](https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22)
 - [Debugging a Compiler Issue](https://en.sfml-dev.org/forums/index.php?topic=20008.0)
-
+- [Built off of this custom sprite sheet](https://www.pixilart.com/art/pokemon-trainer-cloudy-sprite-sheet-fa07ff878054bf3)
+- [Tile Set for Map Creation](https://reliccastle.com/resources/15/)
