@@ -11,6 +11,11 @@ void Game::initPlayer()
 	this->player = new Player();
 }
 
+void Game::initGameWorld()
+{
+	this->gameWorld = new GameWorld();
+}
+
 void Game::initWindow()
 {
 	// window size
@@ -30,6 +35,7 @@ Game::Game()
 {
 	this->initVariables();
 	this->initWindow();
+	this->initGameWorld();
 	this->initPlayer();
 }
 
@@ -96,6 +102,9 @@ void Game::render()
 	*/
 
 	this->window->clear(sf::Color::Red); // clear to black window
+
+	// Draw map
+	this->gameWorld->render(*this->window);
 	
 	// Draw game objects
 	this->player->render(*this->window);

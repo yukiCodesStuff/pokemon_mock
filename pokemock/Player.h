@@ -1,11 +1,11 @@
 #pragma once
 
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "Utils.h"
 #include <windows.h>
 #define sleep(x) Sleep(1000 * (x))
-
-#ifndef PLAYER_H
-#define PLAYER_H
 
 class Player
 {
