@@ -16,6 +16,6 @@ GameTile::GameTile(sf::Texture* texture, float x, float y, bool passable, bool e
 bool GameTile::setUpSprite(sf::Texture* texture)
 {
 	this->sprite.setTexture(*this->texture);
-	this->sprite.setTextureRect(sf::IntRect(0, 414, 128, 128)); // tweak this later
+	this->sprite.setTextureRect(sf::IntRect(0, 416, 128, 128)); // tweak this later
 	return true;
 }
