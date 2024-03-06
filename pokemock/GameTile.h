@@ -13,8 +13,9 @@ public:
 	sf::Vector2f pos; 
 	sf::Texture* texture; // use a single texture sheet
 	sf::Sprite sprite; // 414 from top, 128 x 128
+	std::string textureName;
 
-	GameTile(sf::Texture*, float, float, bool, bool);
+	GameTile(sf::Texture*, std::string, float, float, bool, bool);
 	bool setUpSprite(sf::Texture*);
 };
 

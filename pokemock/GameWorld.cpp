@@ -18,7 +18,7 @@ void GameWorld::initEnemyPositions()
 
 void GameWorld::initWorldTexture()
 {
-	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 3828))) {
+	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 4000))) {
 		std::cout << "ERROR::GAMEWORLD::INITWORLDTEXTURE::Could not load texture file." << std::endl;
 		return;
 	}
@@ -33,7 +33,7 @@ void GameWorld::setUpTiles()
 		vgt row(gridLength);
 		float offsetX = 0;
 		for (int j = 0; j < gridLength; ++j) {
-			row[j] = new GameTile(&this->worldTexture, offsetX, offsetY, true, false);
+			row[j] = new GameTile(&this->worldTexture, "BRICK", offsetX, offsetY, true, false);
 			offsetX += 128;
 		}
 		tiles[i] = row;

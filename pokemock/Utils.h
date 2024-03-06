@@ -8,6 +8,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <string>
 
 enum Direction { UP, DOWN, LEFT, RIGHT };
 
@@ -17,5 +18,8 @@ struct DirectionHash {
         return std::hash<int>()(static_cast<int>(direction));
     }
 };
+
+extern std::unordered_map<Direction, std::vector<sf::IntRect>, DirectionHash> animationMap;
+extern std::unordered_map<std::string, sf::IntRect> tileMap;
 
 #endif

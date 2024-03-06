@@ -3,7 +3,6 @@
 #ifndef GAMEWORLD_H
 #define GAMEWORLD_H
 
-#include "Utils.h"
 #include "GameTile.h"
 
 #define vvg std::vector<std::vector<GameTile*>>
