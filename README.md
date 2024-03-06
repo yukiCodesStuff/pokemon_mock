@@ -6,6 +6,12 @@ Through this project, I learned alot about Object Oriented Programming, and how 
 
 Thanks for taking the time to check out this project!
 
+## Updates
+
+### Recently completed adding a map!
+![tileMapComplete](https://github.com/yukiCodesStuff/pokemon_mock/assets/143112158/d6360e7b-540a-4f85-a8fa-eaf745d5b828)
+This map is not a set texture, but a collection of tileset sprites. Each of these tiles can be set to a certain texture, making it much more dynamic. Each of the tiles have a certain property indicating whether it is possibe to go through them or not. More functionality will be added in future changes (animations, more interactions, etc.)
+
 ## Best Resources
 - [Getting Started](https://www.sfml-dev.org/tutorials/2.6/start-vc.php)
 - [Setting up the Player Class](https://www.youtube.com/watch?v=qlpQu2btYC4&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=22)
