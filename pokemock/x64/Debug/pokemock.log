@@ -1,2 +1,8 @@
-﻿  GameTile.cpp
+﻿  Game.cpp
+  GameTile.cpp
+  GameWorld.cpp
+  Player.cpp
+  Utils.cpp
+  main.cpp
+  Generating Code...
   pokemock.vcxproj -> C:\Users\yukij\source\repos\pokemock\x64\Debug\pokemock.exe

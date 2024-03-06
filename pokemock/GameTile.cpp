@@ -1,8 +1,9 @@
 #include "GameTile.h"
 
-GameTile::GameTile(sf::Texture* texture, float x, float y, bool passable, bool exit)
+GameTile::GameTile(sf::Texture* texture, std::string textureName, float x, float y, bool passable, bool exit)
 {
 	this->texture = texture;
+	this->textureName = textureName;
 	if (!this->setUpSprite(texture)) {
 		std::cout << "GAMETILE::ERROR: Failed to set up sprite" << std::endl;
 		return;
@@ -16,6 +17,6 @@ GameTile::GameTile(sf::Texture* texture, float x, float y, bool passable, bool e
 bool GameTile::setUpSprite(sf::Texture* texture)
 {
 	this->sprite.setTexture(*this->texture);
-	this->sprite.setTextureRect(sf::IntRect(0, 416, 128, 128)); // tweak this later
+	this->sprite.setTextureRect(tileMap[this->textureName]); // tweak this later
 	return true;
 }
