@@ -1,7 +1,11 @@
+#ifndef UTILS_H
+#define UTILS_H
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <iostream>
 #include <unordered_map>
 #include <vector>
 
@@ -13,3 +17,5 @@ struct DirectionHash {
         return std::hash<int>()(static_cast<int>(direction));
     }
 };
+
+#endif

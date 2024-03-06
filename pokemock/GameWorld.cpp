@@ -16,15 +16,47 @@ void GameWorld::initEnemyPositions()
 	// consider adding "enemies" later
 }
 
+void GameWorld::initWorldTexture()
+{
+	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 41504))) {
+		std::cout << "ERROR::GAMEWORLD::INITWORLDTEXTURE::Could not load texture file." << std::endl;
+		return;
+	}
+}
+
 void GameWorld::setUpTiles()
 {
 	this->tiles.clear();
-	vgt firstRow;
-	//firstRow.push_back(new GameTile(""));
+	this->tiles.resize(gridLength);
+	float offsetY = 0;
+	for (int i = 0; i < this->gridLength; ++i) {
+		vgt row(gridLength);
+		float offsetX = 0;
+		for (int j = 0; j < gridLength; ++j) {
+			row[j] = new GameTile(&this->worldTexture, offsetX, offsetY, true, false);
+			offsetX += 128;
+		}
+		tiles[i] = row;
+		offsetY += 128;
+	}
 }
 
 GameWorld::GameWorld()
 {
 	this->gridLength = 8;
+	this->initWorldTexture();
 	this->initState();
+}
+
+GameWorld::~GameWorld()
+{
+}
+
+void GameWorld::render(sf::RenderTarget &target)
+{
+	for (int i = 0; i < this->gridLength; ++i) {
+		for (int j = 0; j < gridLength; ++j) {
+			target.draw(this->tiles[i][j]->sprite);
+		}
+	}
 }

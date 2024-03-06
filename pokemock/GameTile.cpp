@@ -1,8 +1,10 @@
 #include "GameTile.h"
 
-GameTile::GameTile(std::string textureName, float x, float y, bool passable, bool exit)
+GameTile::GameTile(sf::Texture* texture, float x, float y, bool passable, bool exit)
 {
-	if (!setUpSprite(textureName)) {
+	this->texture = texture;
+	if (!this->setUpSprite(texture)) {
+		std::cout << "GAMETILE::ERROR: Failed to set up sprite" << std::endl;
 		return;
 	}
 	this->pos = sf::Vector2f(x, y);
@@ -11,13 +13,9 @@ GameTile::GameTile(std::string textureName, float x, float y, bool passable, boo
 	this->isExit = exit;
 }
 
-bool GameTile::setUpSprite(std::string textureName)
+bool GameTile::setUpSprite(sf::Texture* texture)
 {
-	if (!this->texture.loadFromFile(textureName)) {
-		return false;
-	}
-	this->texture.setSmooth(true); // make sure edges are not blurry
-	this->sprite.setTexture(texture);
-	this->sprite.setTextureRect(sf::IntRect(0, 0, 50, 50)); // tweak this later
+	this->sprite.setTexture(*this->texture);
+	this->sprite.setTextureRect(sf::IntRect(0, 414, 128, 128)); // tweak this later
 	return true;
 }

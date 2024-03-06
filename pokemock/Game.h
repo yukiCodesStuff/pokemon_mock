@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Player.h"
-
 #ifndef GAME_H
 #define GAME_H
 
+#include "Player.h"
+#include "GameWorld.h"
 /*
 *	Game Engine Wrapper Class
 */
@@ -17,12 +17,14 @@ private:
 	// Window
 	sf::RenderWindow* window;
 	Player* player;
+	GameWorld* gameWorld;
 	sf::VideoMode videoMode;
 	sf::Event ev;
 
 	// Private Functions
 	void initVariables();
 	void initPlayer();
+	void initGameWorld();
 	void initWindow();
 
 public:
