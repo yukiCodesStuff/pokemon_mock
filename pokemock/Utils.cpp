@@ -1,7 +1,8 @@
 #include "Utils.h"
 
 std::unordered_map<std::string, sf::IntRect> tileMap = {
-        {"GRASS", sf::IntRect(0, 416, 128, 128)}
+        {"GRASS", sf::IntRect(0, 416, 128, 128)},
+		{"BRICK", sf::IntRect(0, 2944, 128, 128)}
 };
 
 std::unordered_map<Direction, std::vector<sf::IntRect>, DirectionHash> animationMap = {
