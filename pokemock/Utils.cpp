@@ -7,6 +7,14 @@ std::unordered_map<Direction, std::vector<sf::IntRect>, DirectionHash> animation
 	{RIGHT, {sf::IntRect(0, 655, 130, 170), sf::IntRect(123, 655, 130, 170), sf::IntRect(255, 655, 130, 170), sf::IntRect(386, 655, 130, 170)}}
 };
 
+std::unordered_map<char, std::string> charTileMap = {
+	{'.', "GRASS"}
+};
+
+std::unordered_map<char, std::string> charEntityMap = {
+	{'#', "TREE"}
+};
+
 std::unordered_map<std::string, sf::IntRect> tileMap = {
 		{"GRASS", sf::IntRect(0, 416, 128, 128)},
 		{"BRICK", sf::IntRect(0, 2944, 128, 128)}

@@ -13,20 +13,20 @@ void Game::initPlayer()
 
 void Game::initGameWorld()
 {
-	this->gameWorld = new GameWorld(20);
+	this->gameWorld = new GameWorld("maps/sampleMap.txt");
 }
 
 void Game::initWindow()
 {
 	// window size
-	this->videoMode.height = 600;
-	this->videoMode.width = 800;
+	// this->videoMode.height = 600;
+	// this->videoMode.width = 800;
 
 	// Full Screen
 	// this->videoMode.getDesktopMode();
 
-	this->window = new sf::RenderWindow(this->videoMode, "Pokemock", sf::Style::Titlebar | sf::Style::Close);
-	// this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Pokemock", sf::Style::Titlebar | sf::Style::Close);
+	// this->window = new sf::RenderWindow(this->videoMode, "Pokemock", sf::Style::Titlebar | sf::Style::Close);
+	this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Pokemock", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(144);
 	this->window->setVerticalSyncEnabled(false);
 }
@@ -102,7 +102,8 @@ void Game::render()
 		- display frame in window
 	*/
 
-	this->window->clear(sf::Color::Red); // clear to black window
+	//this->window->clear(sf::Color::Red); // clear to black window
+	this->window->clear();
 
 	// Draw map
 	this->gameWorld->render(*this->window);

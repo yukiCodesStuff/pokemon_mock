@@ -17,16 +17,21 @@ private:
 	sf::Vector2i exitPos;
 	sf::Vector2i playerPos;
 	v2i enemyPositions;
+
+	int worldSizex;
+	int worldSizey;
+
 	void initState();
 	void initEnemyPositions();
 	void initWorldTexture();
 	void setUpEntities();
 	void setUpTiles();
+
+	void loadLevel(std::string);
 public:
 	vvg tiles;
 	ve entities;
-	int gridLength;
-	GameWorld(int);
+	GameWorld(std::string);
 	~GameWorld();
 	void render(sf::RenderTarget &target);
 };

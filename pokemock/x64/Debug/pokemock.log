@@ -1,2 +1,5 @@
 ﻿  Game.cpp
+  GameWorld.cpp
+C:\Users\yukij\source\repos\pokemock\pokemock\GameWorld.cpp(68,59): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   pokemock.vcxproj -> C:\Users\yukij\source\repos\pokemock\x64\Debug\pokemock.exe
