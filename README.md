@@ -8,6 +8,11 @@ Thanks for taking the time to check out this project!
 
 ## Updates
 
+## Added a Level Loading System (Loading Levels from TXT Files)
+![txtFileLoadedLevel](https://github.com/yukiCodesStuff/pokemon_mock/assets/143112158/34046814-64e4-4818-9289-cddf6da1e1ca)
+
+This is a map that was loaded from [this text file](https://github.com/yukiCodesStuff/pokemon_mock/blob/main/pokemock/maps/sampleMap.txt). We are now able to pass in a text file as a parameter when constructing the game world, making customizability much easier
+
 ## Added More Map Customization
 ![Screenshot 2024-03-06 193631](https://github.com/yukiCodesStuff/pokemon_mock/assets/143112158/3efa2ac8-990d-45a9-860d-508e7a5414d2)
 
