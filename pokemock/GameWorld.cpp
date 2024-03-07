@@ -33,7 +33,13 @@ void GameWorld::setUpTiles()
 		vgt row(gridLength);
 		float offsetX = 0;
 		for (int j = 0; j < gridLength; ++j) {
-			row[j] = new GameTile(&this->worldTexture, "BRICK", offsetX, offsetY, true, false);
+			if ((i == this->gridLength / 2 || i == this->gridLength / 2 + 1) || 
+				(j == this->gridLength / 2 || j == this->gridLength / 2 + 1)) {
+				row[j] = new GameTile(&this->worldTexture, "BRICK", offsetX, offsetY, true, false);
+			}
+			else {
+				row[j] = new GameTile(&this->worldTexture, "GRASS", offsetX, offsetY, true, false);
+			}
 			offsetX += 128;
 		}
 		tiles[i] = row;
