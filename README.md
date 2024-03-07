@@ -8,6 +8,10 @@ Thanks for taking the time to check out this project!
 
 ## Updates
 
+## Added More Map Customization
+![Screenshot 2024-03-06 193631](https://github.com/yukiCodesStuff/pokemon_mock/assets/143112158/3efa2ac8-990d-45a9-860d-508e7a5414d2)
+Now able to add things such as trees to map, also have more tiles to choose from
+
 ### Recently completed adding a map!
 ![tileMapComplete](https://github.com/yukiCodesStuff/pokemon_mock/assets/143112158/d6360e7b-540a-4f85-a8fa-eaf745d5b828)
 This map is not a set texture, but a collection of tileset sprites. Each of these tiles can be set to a certain texture, making it much more dynamic. Each of the tiles have a certain property indicating whether it is possibe to go through them or not. More functionality will be added in future changes (animations, more interactions, etc.)
