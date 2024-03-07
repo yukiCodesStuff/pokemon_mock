@@ -18,5 +18,6 @@ bool GameTile::setUpSprite(sf::Texture* texture)
 {
 	this->sprite.setTexture(*this->texture);
 	this->sprite.setTextureRect(tileMap[this->textureName]); // tweak this later
+	this->sprite.scale(.5f, .5f);
 	return true;
 }
