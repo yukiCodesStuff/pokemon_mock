@@ -21,5 +21,6 @@ struct DirectionHash {
 
 extern std::unordered_map<Direction, std::vector<sf::IntRect>, DirectionHash> animationMap;
 extern std::unordered_map<std::string, sf::IntRect> tileMap;
+extern std::unordered_map<std::string, sf::IntRect> entityMap;
 
 #endif

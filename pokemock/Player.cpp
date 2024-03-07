@@ -20,6 +20,7 @@ void Player::initSprite()
 
 	// resize the sprite
 	this->sprite.scale(.5f, .5f);
+	this->sprite.setPosition(400, 400);
 }
 
 Player::Player()

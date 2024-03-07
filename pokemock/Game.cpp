@@ -19,14 +19,14 @@ void Game::initGameWorld()
 void Game::initWindow()
 {
 	// window size
-	// this->videoMode.height = 600;
-	// this->videoMode.width = 800;
+	this->videoMode.height = 600;
+	this->videoMode.width = 800;
 
 	// Full Screen
 	// this->videoMode.getDesktopMode();
 
-	// this->window = new sf::RenderWindow(this->videoMode, "Pokemock", sf::Style::Titlebar | sf::Style::Close);
-	this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Pokemock", sf::Style::Titlebar | sf::Style::Close);
+	this->window = new sf::RenderWindow(this->videoMode, "Pokemock", sf::Style::Titlebar | sf::Style::Close);
+	// this->window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Pokemock", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(144);
 	this->window->setVerticalSyncEnabled(false);
 }

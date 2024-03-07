@@ -8,6 +8,7 @@ void GameWorld::initState()
 	this->playerPos = sf::Vector2i(gridLength - 1, gridLength - 1);
 	this->initEnemyPositions();
 	this->setUpTiles();
+	this->setUpEntities();
 }
 
 void GameWorld::initEnemyPositions()
@@ -18,10 +19,23 @@ void GameWorld::initEnemyPositions()
 
 void GameWorld::initWorldTexture()
 {
-	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 4000))) {
+	if (!this->worldTexture.loadFromFile("./assets/tileset.png", sf::IntRect(0, 0, 256, 13000))) {
 		std::cout << "ERROR::GAMEWORLD::INITWORLDTEXTURE::Could not load texture file." << std::endl;
 		return;
 	}
+}
+
+void GameWorld::setUpEntities()
+{
+	this->entities.clear();
+	// hard coding this in
+	this->entities.resize(6);
+	this->entities[0] = new Entity(&this->worldTexture, "TREE", 0, 0);
+	this->entities[1] = new Entity(&this->worldTexture, "TREE", 128, 0);
+	this->entities[2] = new Entity(&this->worldTexture, "TREE", 256, 0);
+	this->entities[3] = new Entity(&this->worldTexture, "TREE", 0, 128);
+	this->entities[4] = new Entity(&this->worldTexture, "TREE", 128, 128);
+	this->entities[5] = new Entity(&this->worldTexture, "TREE", 256, 128);
 }
 
 void GameWorld::setUpTiles()
@@ -64,5 +78,10 @@ void GameWorld::render(sf::RenderTarget &target)
 		for (int j = 0; j < gridLength; ++j) {
 			target.draw(this->tiles[i][j]->sprite);
 		}
+	}
+
+	for (Entity* entity : this->entities) {
+		// std::cout << entity->pos.x << "," << entity->pos.y << std::endl;
+		target.draw(entity->sprite);
 	}
 }
