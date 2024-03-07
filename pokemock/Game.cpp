@@ -13,7 +13,7 @@ void Game::initPlayer()
 
 void Game::initGameWorld()
 {
-	this->gameWorld = new GameWorld();
+	this->gameWorld = new GameWorld(20);
 }
 
 void Game::initWindow()

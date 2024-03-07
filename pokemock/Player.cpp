@@ -19,7 +19,7 @@ void Player::initSprite()
 	this->sprite.setTextureRect(rectSourceSprite);
 
 	// resize the sprite
-	this->sprite.scale(.75f, .75f);
+	this->sprite.scale(.5f, .5f);
 }
 
 Player::Player()

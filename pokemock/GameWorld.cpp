@@ -40,16 +40,16 @@ void GameWorld::setUpTiles()
 			else {
 				row[j] = new GameTile(&this->worldTexture, "GRASS", offsetX, offsetY, true, false);
 			}
-			offsetX += 128;
+			offsetX += 64;
 		}
 		tiles[i] = row;
-		offsetY += 128;
+		offsetY += 64;
 	}
 }
 
-GameWorld::GameWorld()
+GameWorld::GameWorld(int worldSize)
 {
-	this->gridLength = 8;
+	this->gridLength = worldSize;
 	this->initWorldTexture();
 	this->initState();
 }

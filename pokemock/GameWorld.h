@@ -22,7 +22,7 @@ private:
 public:
 	vvg tiles;
 	int gridLength;
-	GameWorld();
+	GameWorld(int);
 	~GameWorld();
 	void render(sf::RenderTarget &target);
 };
