@@ -5,10 +5,10 @@
 void GameWorld::initState()
 {
 	this->exitPos = sf::Vector2i(1, 0);
-	this->playerPos = sf::Vector2i(gridLength - 1, gridLength - 1);
+	this->playerPos = sf::Vector2i(300, 200);
 	this->initEnemyPositions();
-	this->setUpTiles();
-	this->setUpEntities();
+	// this->setUpTiles();
+	// this->setUpEntities();
 }
 
 void GameWorld::initEnemyPositions()
@@ -41,19 +41,13 @@ void GameWorld::setUpEntities()
 void GameWorld::setUpTiles()
 {
 	this->tiles.clear();
-	this->tiles.resize(gridLength);
+	this->tiles.resize(this->worldSizey);
 	float offsetY = 0;
-	for (int i = 0; i < this->gridLength; ++i) {
-		vgt row(gridLength);
+	for (int i = 0; i < this->worldSizey; ++i) {
+		vgt row(this->worldSizex);
 		float offsetX = 0;
-		for (int j = 0; j < gridLength; ++j) {
-			if ((i == this->gridLength / 2 || i == this->gridLength / 2 + 1) || 
-				(j == this->gridLength / 2 || j == this->gridLength / 2 + 1)) {
-				row[j] = new GameTile(&this->worldTexture, "BRICK", offsetX, offsetY, true, false);
-			}
-			else {
-				row[j] = new GameTile(&this->worldTexture, "GRASS", offsetX, offsetY, true, false);
-			}
+		for (int j = 0; j < this->worldSizex; ++j) {
+			row[j] = new GameTile(&this->worldTexture, "GRASS", offsetX, offsetY, true, false);
 			offsetX += 64;
 		}
 		tiles[i] = row;
@@ -61,9 +55,44 @@ void GameWorld::setUpTiles()
 	}
 }
 
-GameWorld::GameWorld(int worldSize)
+void GameWorld::loadLevel(std::string filename)
 {
-	this->gridLength = worldSize;
+	std::ifstream LevelFile(filename);
+	std::string rowString;
+
+	this->tiles.clear();
+	this->entities.clear();
+	float offsetY = 0;
+
+	while (getline(LevelFile, rowString)) {
+		if (!this->worldSizex) this->worldSizex = rowString.size();
+		this->worldSizey++;
+
+		std::cout << rowString << std::endl;
+
+		vgt row(this->worldSizex);
+		float offsetX = 0;
+		for (int i = 0; i < this->worldSizex; ++i) {
+			if (charTileMap.find(rowString[i]) != charTileMap.end()) {
+				row[i] = new GameTile(&this->worldTexture, charTileMap[rowString[i]], offsetX, offsetY, true, false);
+			}
+			else {
+				row[i] = new GameTile(&this->worldTexture, "GRASS", offsetX, offsetY, true, false);
+				this->entities.push_back(new Entity(&this->worldTexture, charEntityMap[rowString[i]], offsetX, offsetY));
+			}
+			offsetX += 64;
+		}
+		this->tiles.push_back(row);
+		offsetY += 64;
+	}
+	LevelFile.close();
+}
+
+GameWorld::GameWorld(std::string filename)
+{
+	this->worldSizex = 0;
+	this->worldSizey = 0;
+	this->loadLevel(filename);
 	this->initWorldTexture();
 	this->initState();
 }
@@ -74,8 +103,8 @@ GameWorld::~GameWorld()
 
 void GameWorld::render(sf::RenderTarget &target)
 {
-	for (int i = 0; i < this->gridLength; ++i) {
-		for (int j = 0; j < gridLength; ++j) {
+	for (int i = 0; i < this->worldSizey; ++i) {
+		for (int j = 0; j < this->worldSizex; ++j) {
 			target.draw(this->tiles[i][j]->sprite);
 		}
 	}
